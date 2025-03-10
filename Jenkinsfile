@@ -24,7 +24,7 @@ pipeline {
             echo "Pipeline execution Failed.Update the Pipeline by checking Error."
             emailext subject: "Jenkins Build Failed ",
                 body: "The Jenkins pipeline Failed! ",
-                recipentProviders: [[$class: 'DeveloperRecipientProvider']],
+                recipientProviders: [[$class: 'DeveloperRecipientProvider']],
                 to: "samudrala9988@gmail.com"
             
         }
