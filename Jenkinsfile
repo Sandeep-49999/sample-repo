@@ -12,22 +12,20 @@ pipeline {
             }
         }
     }
-    post{
-        success{
+    post {
+        success {
             echo "Pipeline is Validated and Successful"
-            emailext subject: "Jenkins Build Success ",
-                     body: "The Jenkins pipeline executed successfully! ",
-                     recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+            emailext subject: "Jenkins Build Success",
+                     body: "The Jenkins pipeline executed successfully!",
+                     mimeType: 'text/html',  
                      to: "samudrala9988@gmail.com"
         }
-        failure{
-            echo "Pipeline execution Failed.Update the Pipeline by checking Error."
-            emailext subject: "Jenkins Build Failed ",
-                body: "The Jenkins pipeline Failed! ",
-                recipientProviders: [[$class: 'DeveloperRecipientProvider']],
-                to: "samudrala9988@gmail.com"
-            
+        failure {
+            echo "Pipeline execution Failed. Update the Pipeline by checking Error."
+            emailext subject: "Jenkins Build Failed",
+                     body: "The Jenkins pipeline Failed!",
+                     mimeType: 'text/html',
+                     to: "samudrala9988@gmail.com"
         }
     }
-            
 }
