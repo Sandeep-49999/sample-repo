@@ -12,4 +12,13 @@ pipeline {
             }
         }
     }
+    post{
+        success{
+            echo "Pipeline is Validated and Successful"
+        }
+        failure{
+            echo "Pipeline execution Failed.Update the Pipeline by checking Error."
+        }
+    }
+            
 }
