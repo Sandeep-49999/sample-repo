@@ -17,15 +17,15 @@ pipeline {
             echo "Pipeline is Validated and Successful"
             emailext subject: "Jenkins Build Success",
                      body: "The Jenkins pipeline executed successfully!",
-                     mimeType: 'text/html',  
-                     to: "samudrala9988@gmail.com"
+                     to: "samudrala9988@gmail.com",
+                     replyTo: "samudrala9988@gmail.com"
         }
         failure {
-            echo "Pipeline execution Failed. Update the Pipeline by checking Error."
+            echo "Pipeline execution Failed. Update the Pipeline by checking the Error."
             emailext subject: "Jenkins Build Failed",
                      body: "The Jenkins pipeline Failed!",
-                     mimeType: 'text/html',
-                     to: "samudrala9988@gmail.com"
+                     to: "samudrala9988@gmail.com",
+                     replyTo: "samudrala9988@gmail.com"
         }
     }
 }
